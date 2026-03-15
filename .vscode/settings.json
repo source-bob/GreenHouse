@@ -1,0 +1,11 @@
+{
+  "cmake.environment": {
+    "PICO_SDK_PATH": "C:/pico/pico-sdk",
+    "PICO_TOOLCHAIN_PATH": "C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin"
+  },
+  "cmake.generator": "Ninja",
+  "cmake.buildDirectory": "${workspaceFolder}/build",
+  "cmake.sourceDirectory": "C:/Users/onion/Desktop/oppi_docs/arm_proj/arm_proj/rp2040-freertos",
+  "cmake.useCMakePresets": "always",
+  "cmake.configureOnOpen": false
+}

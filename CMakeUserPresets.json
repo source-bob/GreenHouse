@@ -1,0 +1,21 @@
+{
+  "version": 4,
+  "configurePresets": [
+    {
+      "name": "local-wifi",
+      "displayName": "Local WiFi build",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/../build",
+      "cacheVariables": {
+        "WIFI_SSID": "MY_WIFI_SSID",
+        "WIFI_PASSWORD": "MY_WIFI_PASS"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "local-wifi",
+      "configurePreset": "local-wifi"
+    }
+  ]
+}

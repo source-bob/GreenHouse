@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greenhouse</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="data">
+    <h1>HACKATHON GREENHOUSE</h1>
+    <div class="image-container">
+        <img src="logo.png" class="image" alt="Vaisala">
+    </div>
+    <div class="livedata">
+        <div class="time">Latest Measurement: <%= tTime %></div>
+        <div class="co2">CO2 Value: <%= co2 %>ppm</div>
+        <div class="rh">Relative humidity: <%= rh %>%</div>
+        <div class="tmp">Temperature: <%= tmp %>ºC</div>
+        <div class="sp">Set Point: <%= sp %>ppm</div>
+        <div class="fan">Fan Speed: <%= fan %>%</div>
+    </div>
+</div>
+<div class="grid-container">
+    <div class="grid-item">
+        <h3>CO2 / Set Point</h3>
+        <canvas id="co2Chart"></canvas>
+    </div>
+    <div class="grid-item">
+        <h3>Environment / Fan</h3>
+        <canvas id="envChart"></canvas>
+    </div>
+</div>
+<section class="setpoint-panel">
+  <h2>Remote CO2 Setpoint</h2>
+
+  <div class="setpoint-row">
+    <div class="bobs">
+        <label for="setpointInput">Target (ppm):</label>
+        <input
+        id="setpointInput"
+        type="number"
+        min="200"
+        max="1500"
+        step="10"
+        value="<%= sp %>"
+        />
+        <button id="setpointBtn" type="button">Set target</button>
+    </div>
+  </div>
+
+  <div class="setpoint-meta">
+    <span>Current target:</span>
+    <strong id="currentSetpoint"><%= sp %></strong>
+    <span>ppm</span>
+  </div>
+
+  <div id="setpointStatus"></div>
+</section>
+<script src="/home.js"></script>
+</body>
+</html>

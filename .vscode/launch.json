@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Pico W (OpenOCD) - arm_proj (attach)",
+      "type": "cortex-debug",
+      "request": "attach",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/src/arm_proj.elf",
+      "gdbPath": "C:/PROGRA~2/Arm/GNUTOO~1/bin/arm-none-eabi-gdb.exe",
+      "serverpath": "C:/pico/openocd/bin/openocd.exe",
+      "searchDir": ["C:/pico/openocd/scripts"],
+      "configFiles": ["board/pico-debug.cfg"],
+      "showDevDebugOutput": "raw",
+      "debuggerArgs": ["-nx", "-nh"],
+      "postAttachCommands": ["monitor reset halt"]
+    },
+
+    {
+   
+      "name": "Pico W (OpenOCD) - arm_proj (FLASH + debug)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/src/arm_proj.elf",
+      "gdbPath": "C:/PROGRA~2/Arm/GNUTOO~1/bin/arm-none-eabi-gdb.exe",
+      "serverpath": "C:/pico/openocd/bin/openocd.exe",
+      "searchDir": ["C:/pico/openocd/scripts"],
+      "configFiles": ["board/pico-debug.cfg"],
+      "preLaunchTask": "Build (CMake)",
+      "showDevDebugOutput": "raw",
+      "debuggerArgs": ["-nx", "-nh"],
+
+      "postLaunchCommands": [
+        "monitor reset halt",
+        "monitor program \"C:/Users/onion/Desktop/oppi_docs/arm_proj/arm_proj/build/src/arm_proj.elf\" verify reset",
+        "monitor reset halt"
+      ],
+      "runToEntryPoint": "main"
+    }
+  ]
+}

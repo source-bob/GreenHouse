@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build (CMake)",
+      "type": "process",
+      "command": "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe",
+      "args": [
+        "--build",
+        "${workspaceFolder}/build",
+        "--target",
+        "all"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
